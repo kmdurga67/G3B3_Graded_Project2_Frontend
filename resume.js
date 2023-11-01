@@ -70,7 +70,12 @@ function displayApplicant() {
     leftColumn.appendChild(emailInfo);
 
     const profileInfo = document.createElement("h6");
-    profileInfo.textContent = `${applicant.basics.profiles.url}`;
+    const linkedinLink = document.createElement("a");
+    linkedinLink.textContent = "LinkedIn";
+    linkedinLink.href = applicant.basics.profiles.url;
+    linkedinLink.target = "_blank";
+
+    profileInfo.appendChild(linkedinLink);
     leftColumn.appendChild(profileInfo);
 
     const skillsHeading = document.createElement("h2");
